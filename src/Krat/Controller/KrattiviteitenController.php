@@ -1,5 +1,5 @@
 <?php
-namespace Example\Controller;
+namespace Krat\Controller;
 
 use MJanssen\Controller\RestController;
 use MJanssen\Controller\RestControllerInterface;
@@ -11,25 +11,25 @@ use Swagger\Annotations as SWG;
 
 /**
  * Class RestController
- * @package Example\Controller
+ * @package Krat\Controller
  *
  * @SWG\Resource(
  *     apiVersion="1.0",
  *     swaggerVersion="1.2",
- *     resourcePath="/items",
- *     basePath="http://example/api"
+ *     resourcePath="/krattiviteiten",
+ *     basePath="http://krat.localhost/api"
  * )
  */
-class ItemsController extends RestController implements RestControllerInterface
+class KrattiviteitenController extends RestController implements RestControllerInterface
 {
     /**
      * @SWG\Api(
-     *     path="/items/{itemId}.{format}",
+     *     path="/krattiviteiten/{krattiviteitId}.{format}",
      *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="GET", responseClass="Item")
+     *         @SWG\Operation(httpMethod="GET", responseClass="Krattiviteit")
      *     )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Item not found")
+     * @SWG\ErrorResponse(code="404", reason="Krattiviteit not found")
      */
     public function getAction(Request $request, Application $app, $id)
     {
@@ -40,9 +40,9 @@ class ItemsController extends RestController implements RestControllerInterface
 
     /**
      * @SWG\Api(
-     *     path="/items.{format}",
+     *     path="/krattiviteiten.{format}",
      *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="GET", responseClass="Item")
+     *         @SWG\Operation(httpMethod="GET", responseClass="Krattiviteit")
      *     )
      * )
      */
@@ -55,12 +55,12 @@ class ItemsController extends RestController implements RestControllerInterface
 
     /**
      * @SWG\Api(
-     *     path="/items/{itemId}",
+     *     path="/krattiviteiten/{krattiviteitId}",
      *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="DELETE", responseClass="Item")
+     *         @SWG\Operation(httpMethod="DELETE", responseClass="Krattiviteit")
      *     )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Item not found")
+     * @SWG\ErrorResponse(code="404", reason="Krattiviteit not found")
      */
     public function deleteAction(Request $request, Application $app, $id)
     {
@@ -71,9 +71,9 @@ class ItemsController extends RestController implements RestControllerInterface
 
     /**
      * @SWG\Api(
-     *     path="/items",
+     *     path="/krattiviteiten",
      *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="POST", responseClass="Item")
+     *         @SWG\Operation(httpMethod="POST", responseClass="Krattiviteit")
      *     )
      * )
      */
@@ -86,12 +86,12 @@ class ItemsController extends RestController implements RestControllerInterface
 
     /**
      * @SWG\Api(
-     *     path="/items/{itemId}.{format}",
+     *     path="/krattiviteiten/{krattiviteitId}.{format}",
      *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="PUT", responseClass="Item")
+     *         @SWG\Operation(httpMethod="PUT", responseClass="Krattiviteit")
      *     )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Item not found")
+     * @SWG\ErrorResponse(code="404", reason="Krattiviteit not found")
      */
     public function putAction(Request $request, Application $app, $id)
     {

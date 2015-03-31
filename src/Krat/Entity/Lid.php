@@ -1,5 +1,5 @@
 <?php
-namespace Example\Entity;
+namespace Krat\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation\Type;
@@ -9,10 +9,10 @@ use Swagger\Annotations as SWG;
 
 /**
  * @ORM\Entity(repositoryClass="Spray\PersistenceBundle\Repository\FilterableEntityRepository")
- * @ORM\Table(name="items")
- * @SWG\Model(id="Item")
+ * @ORM\Table(name="leden")
+ * @SWG\Model(id="Lid")
  */
-class Item
+class Lid
 {
 
     /**
@@ -49,9 +49,4 @@ class Item
      */
     protected $phone;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="items")
-     * @Groups({"detail"})
-     */
-    protected $category;
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Example\Controller;
+namespace Krat\Controller;
 
 use MJanssen\Controller\RestController;
 use MJanssen\Controller\RestControllerInterface;
@@ -11,25 +11,25 @@ use Swagger\Annotations as SWG;
 
 /**
  * Class RestController
- * @package Example\Controller
+ * @package Krat\Controller
  *
  * @SWG\Resource(
  *     apiVersion="1.0",
  *     swaggerVersion="1.2",
- *     resourcePath="/categories",
- *     basePath="http://example/api"
+ *     resourcePath="/leden",
+ *     basePath="http://krat.localhost/api"
  * )
  */
-class CategoriesController extends RestController implements RestControllerInterface
+class LedenController extends RestController implements RestControllerInterface
 {
     /**
      * @SWG\Api(
-     *     path="/categories/{categoryId}.{format}",
+     *     path="/leden/{lidId}.{format}",
      *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="GET", responseClass="Category")
+     *         @SWG\Operation(httpMethod="GET", responseClass="Lid")
      *     )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Category not found")
+     * @SWG\ErrorResponse(code="404", reason="Lid not found")
      */
     public function getAction(Request $request, Application $app, $id)
     {
@@ -40,9 +40,9 @@ class CategoriesController extends RestController implements RestControllerInter
 
     /**
      * @SWG\Api(
-     *     path="/categories.{format}",
+     *     path="/leden.{format}",
      *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="GET", responseClass="Category")
+     *         @SWG\Operation(httpMethod="GET", responseClass="Lid")
      *     )
      * )
      */
@@ -55,12 +55,12 @@ class CategoriesController extends RestController implements RestControllerInter
 
     /**
      * @SWG\Api(
-     *     path="/categories/{categoryId}",
+     *     path="/leden/{lidId}",
      *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="DELETE", responseClass="Category")
+     *         @SWG\Operation(httpMethod="DELETE", responseClass="Lid")
      *     )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Category not found")
+     * @SWG\ErrorResponse(code="404", reason="Lid not found")
      */
     public function deleteAction(Request $request, Application $app, $id)
     {
@@ -71,9 +71,9 @@ class CategoriesController extends RestController implements RestControllerInter
 
     /**
      * @SWG\Api(
-     *     path="/categories",
+     *     path="/leden",
      *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="POST", responseClass="Category")
+     *         @SWG\Operation(httpMethod="POST", responseClass="Lid")
      *     )
      * )
      */
@@ -86,12 +86,12 @@ class CategoriesController extends RestController implements RestControllerInter
 
     /**
      * @SWG\Api(
-     *     path="/categories/{categoryId}.{format}",
+     *     path="/leden/{lidId}.{format}",
      *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="PUT", responseClass="Category")
+     *         @SWG\Operation(httpMethod="PUT", responseClass="Lid")
      *     )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Category not found")
+     * @SWG\ErrorResponse(code="404", reason="Lid not found")
      */
     public function putAction(Request $request, Application $app, $id)
     {

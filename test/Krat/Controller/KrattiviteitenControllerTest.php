@@ -1,12 +1,12 @@
 <?php
-namespace Example\Controller;
+namespace Krat\Controller;
 
 /**
  * Default rest controller test case
- * Class CategoriesControllerTest
- * @package Example\Controller
+ * Class KrattiviteitenControllerTest
+ * @package Krat\Controller
  */
-class CategoriesControllerTest extends \MJanssen\Controller\AbstractControllerTest
+class KrattiviteitenControllerTest extends \MJanssen\Controller\AbstractControllerTest
 {
     /**
      * Test if the get action works
@@ -61,10 +61,10 @@ class CategoriesControllerTest extends \MJanssen\Controller\AbstractControllerTe
     }
 
     /**
-     * @return CategoriesController
+     * @return KrattiviteitenController
      */
     protected function getTestController()
     {
-        return new CategoriesController();
+        return new KrattiiteitenController();
     }
-} 
+}

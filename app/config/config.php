@@ -9,16 +9,16 @@ return array(
         'charset' => 'UTF8',
         'master' => array(
             'user'     => 'root',
-            'password' => 'root',
+            'password' => '',
             'host'     => 'localhost',
-            'dbname'   => 'silexrest'
+            'dbname'   => 'krat'
         ),
         'slaves' => array(
             array(
                 'user'     => 'root',
-                'password' => 'root',
+                'password' => '',
                 'host'     => 'localhost',
-                'dbname'   => 'silexrest'
+                'dbname'   => 'krat'
             )
         ),
         'wrapperClass' => 'Doctrine\DBAL\Connections\MasterSlaveConnection'
@@ -30,9 +30,9 @@ return array(
         'mappings' => array(
             array(
                 'type'      => 'annotation',
-                'namespace' => 'Example\Entity',
+                'namespace' => 'Krat\Entity',
                 'alias'     => 'core',
-                'path'      => '%app.path%/src/Example/Entity',
+                'path'      => '%app.path%/src/Krat/Entity',
                 'use_simple_annotation_reader' => false
             )
         )

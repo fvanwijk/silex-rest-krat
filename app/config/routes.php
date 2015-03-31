@@ -23,8 +23,8 @@ return array(
             )
         ),
         array(
-            'pattern' => '%baseUrl%/core/items/{id}',
-            'controller' => 'Example\Controller\ItemsController::resolveAction',
+            'pattern' => '%baseUrl%/core/leden/{id}',
+            'controller' => 'Krat\Controller\LedenController::resolveAction',
             'method' => array(
                 'get', 'put', 'delete'
             ),
@@ -33,23 +33,23 @@ return array(
             ),
             'value' => array(
                 'namespace' => 'core',
-                'entity'    => 'items'
+                'entity'    => 'lid'
             )
         ),
         array(
-            'pattern' => '%baseUrl%/core/items',
-            'controller' => 'Example\Controller\ItemsController::resolveAction',
+            'pattern' => '%baseUrl%/core/leden',
+            'controller' => 'Krat\Controller\LedenController::resolveAction',
             'method' => array(
                 'get', 'post'
             ),
             'value' => array(
                 'namespace' => 'core',
-                'entity'    => 'items'
+                'entity'    => 'lid'
             )
         ),
         array(
-            'pattern' => '%baseUrl%/core/categories/{id}',
-            'controller' => 'Example\Controller\CategoriesController::resolveAction',
+            'pattern' => '%baseUrl%/core/krattiviteiten/{id}',
+            'controller' => 'Krat\Controller\KrattiviteitenController::resolveAction',
             'method' => array(
                 'get', 'put', 'delete'
             ),
@@ -58,18 +58,18 @@ return array(
             ),
             'value' => array(
                 'namespace' => 'core',
-                'entity'    => 'categories'
+                'entity'    => 'krattiviteit'
             )
         ),
         array(
-            'pattern' => '%baseUrl%/core/categories',
-            'controller' => 'Example\Controller\CategoriesController::resolveAction',
+            'pattern' => '%baseUrl%/core/krattiviteiten',
+            'controller' => 'Krat\Controller\KrattiviteitenController::resolveAction',
             'method' => array(
                 'get', 'post'
             ),
             'value' => array(
                 'namespace' => 'core',
-                'entity'    => 'categories'
+                'entity'    => 'krattiviteit'
             )
         )
     )

@@ -10,7 +10,7 @@
         <whitelist>
             <directory suffix=".php">./src</directory>
             <exclude>
-                <directory suffix=".php">./src/Example/Entity</directory>
+                <directory suffix=".php">./src/Krat/Entity</directory>
             </exclude>
         </whitelist>
     </filter>

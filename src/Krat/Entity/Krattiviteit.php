@@ -1,5 +1,5 @@
 <?php
-namespace Example\Entity;
+namespace Krat\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -10,10 +10,10 @@ use Swagger\Annotations as SWG;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="categories")
- * @SWG\Model(id="Category")
+ * @ORM\Table(name="krattiviteiten")
+ * @SWG\Model(id="Krattiviteit")
  */
-class Category
+class Krattiviteit
 {
     /**
      * @Type("integer")
@@ -33,14 +33,4 @@ class Category
      */
     protected $name;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Item", mappedBy="category", cascade={"persist", "remove"}, orphanRemoval=true)
-     * @Groups({"list", "detail"})
-     */
-    protected $items;
-
-    public function __construct()
-    {
-        $this->items = new ArrayCollection();
-    }
 }

@@ -1,10 +1,10 @@
-Example\Entity\Item:
+Krat\Entity\Lid:
   properties:
     name:
       - NotNull: ~
       - NotBlank: ~
 
-Example\Entity\Category:
+Krat\Entity\Krattiviteit:
   properties:
     name:
       - NotNull: ~
