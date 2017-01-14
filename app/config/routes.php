@@ -5,7 +5,7 @@ $regex['id']     = '^[\d]+$';
 
 return array(
     'config.routes' => array(
-        array(
+        /*array(
             'pattern' => '%baseUrl%/api/api-docs',
             'controller' => 'MJanssen\Controller\ApiDocsController::getAction',
             'method' => array(
@@ -21,9 +21,9 @@ return array(
             'assert' => array(
                 'resource' => $regex['string']
             )
-        ),
+        ),*/
         array(
-            'pattern' => '%baseUrl%/core/leden/{id}',
+            'pattern' => '%baseUrl%/api/leden/{id}',
             'controller' => 'Krat\Controller\LedenController::resolveAction',
             'method' => array(
                 'get', 'put', 'delete'
@@ -37,7 +37,7 @@ return array(
             )
         ),
         array(
-            'pattern' => '%baseUrl%/core/leden',
+            'pattern' => '%baseUrl%/api/leden',
             'controller' => 'Krat\Controller\LedenController::resolveAction',
             'method' => array(
                 'get', 'post'
@@ -48,7 +48,7 @@ return array(
             )
         ),
         array(
-            'pattern' => '%baseUrl%/core/krattiviteiten/{id}',
+            'pattern' => '%baseUrl%/api/krattiviteiten/{id}',
             'controller' => 'Krat\Controller\KrattiviteitenController::resolveAction',
             'method' => array(
                 'get', 'put', 'delete'
@@ -62,7 +62,7 @@ return array(
             )
         ),
         array(
-            'pattern' => '%baseUrl%/core/krattiviteiten',
+            'pattern' => '%baseUrl%/api/krattiviteiten',
             'controller' => 'Krat\Controller\KrattiviteitenController::resolveAction',
             'method' => array(
                 'get', 'post'

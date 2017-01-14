@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "eb376ee5a67c31217398ffdf5d5f7c7f",
+    "hash": "f82e4263339e740137af9607bcad521b",
     "packages": [
         {
             "name": "dflydev/doctrine-orm-service-provider",
@@ -807,6 +807,54 @@
             "time": "2014-07-06 10:59:11"
         },
         {
+            "name": "jdesrosiers/silex-swagger-provider",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jdesrosiers/silex-swagger-provider.git",
+                "reference": "cfc7762f3326c1092653506d33fd6a7263ef5217"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jdesrosiers/silex-swagger-provider/zipball/cfc7762f3326c1092653506d33fd6a7263ef5217",
+                "reference": "cfc7762f3326c1092653506d33fd6a7263ef5217",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": "~1.0",
+                "zircote/swagger-php": "~0.8,<0.10.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/browser-kit": "2.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JDesrosiers": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason Desrosiers",
+                    "email": "jdesrosi@gmail.com"
+                }
+            ],
+            "description": "A silex service provider that integrates swagger-php into silex",
+            "keywords": [
+                "provider",
+                "service",
+                "silex",
+                "swagger",
+                "swagger-ui"
+            ],
+            "time": "2014-02-08 05:08:21"
+        },
+        {
             "name": "jdorn/sql-formatter",
             "version": "v1.2.17",
             "source": {
@@ -1045,6 +1093,50 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "time": "2013-10-22 09:14:54"
+        },
+        {
+            "name": "kbrabrand/silex-swagger-ui",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kbrabrand/silex-swagger-ui.git",
+                "reference": "ec2a95a341f7ba13bb7ca16a6930a956273a1361"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kbrabrand/silex-swagger-ui/zipball/ec2a95a341f7ba13bb7ca16a6930a956273a1361",
+                "reference": "ec2a95a341f7ba13bb7ca16a6930a956273a1361",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "silex/silex": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SwaggerUI": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kristoffer Brabrand",
+                    "email": "kristoffer@brabrand.no"
+                }
+            ],
+            "description": "A silex service provider that integrates the Swagger UI documentation browser into silex",
+            "keywords": [
+                "provider",
+                "service",
+                "silex",
+                "swagger",
+                "swagger-ui"
+            ],
+            "time": "2014-11-28 14:36:19"
         },
         {
             "name": "marcojanssen/silex-rest-service-providers",
@@ -3692,18 +3784,13 @@
             "time": "2014-08-05 09:00:40"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.0"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }

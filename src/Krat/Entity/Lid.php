@@ -10,22 +10,28 @@ use Swagger\Annotations as SWG;
 /**
  * @ORM\Entity(repositoryClass="Spray\PersistenceBundle\Repository\FilterableEntityRepository")
  * @ORM\Table(name="leden")
- * @SWG\Model(id="Lid")
+ * @SWG\Model()
  */
 class Lid
 {
 
     /**
+     * @var int
+     *
      * @Type("integer")
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
      * @Groups({"list", "detail"})
-     * @SWG\Property(name="id",type="integer")
+     * @SWG\Property(required=true)
      */
     protected $id;
 
     /**
+     * The full name
+     *
+     * @var string
+     *
      * @Type("string")
      * @ORM\Column(type="string")
      * @Groups({"list", "detail"})
@@ -34,6 +40,10 @@ class Lid
     protected $name;
 
     /**
+     * The e-mail address
+     *
+     * @var string
+     *
      * @Type("string")
      * @ORM\Column(type="string")
      * @Groups({"list", "detail"})
@@ -42,6 +52,10 @@ class Lid
     protected $email;
 
     /**
+     * The home or mobile phone number of the member
+     *
+     * @var string
+     *
      * @Type("string")
      * @ORM\Column(type="string")
      * @Groups({"list", "detail"})

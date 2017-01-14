@@ -15,22 +15,32 @@ use Swagger\Annotations as SWG;
  *
  * @SWG\Resource(
  *     apiVersion="1.0",
- *     swaggerVersion="1.2",
+ *     basePath="/",
  *     resourcePath="/krattiviteiten",
- *     basePath="http://krat.localhost/api"
+ *     description="Krattiviteiten opvragen en beheren"
  * )
  */
 class KrattiviteitenController extends RestController implements RestControllerInterface
 {
     /**
      * @SWG\Api(
-     *     path="/krattiviteiten/{krattiviteitId}.{format}",
-     *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="GET", responseClass="Krattiviteit")
-     *     )
+     *   path="/krattiviteiten/{id}",
+     *   @SWG\Operation(
+     *     method="GET",
+     *     nickname="krattiviteit",
+     *     summary="De krattiviteit met ID {id} ophalen",
+     *     type="Krattiviteit",
+     *     @SWG\Parameter(
+     *       name="id",
+     *       description="Het ID van de krattiviteit",
+     *       required=true,
+     *       type="integer",
+     *       paramType="path"
+     *     ),
+     *     @SWG\ResponseMessage(code="200", message="Got the krattiviteiten")
+     *   )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Krattiviteit not found")
-     */
+     **/
     public function getAction(Request $request, Application $app, $id)
     {
         return new JsonResponse(
@@ -40,12 +50,15 @@ class KrattiviteitenController extends RestController implements RestControllerI
 
     /**
      * @SWG\Api(
-     *     path="/krattiviteiten.{format}",
-     *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="GET", responseClass="Krattiviteit")
-     *     )
+     *   path="/krattiviteiten",
+     *   @SWG\Operation(
+     *     method="GET",
+     *     nickname="krattiviteit",
+     *     summary="Lijst met alle krattiviteiten opvragen",
+     *     type="List[Krattiviteit]"
+     *   )
      * )
-     */
+     **/
     public function getCollectionAction(Request $request, Application $app)
     {
         return new JsonResponse(
@@ -55,13 +68,23 @@ class KrattiviteitenController extends RestController implements RestControllerI
 
     /**
      * @SWG\Api(
-     *     path="/krattiviteiten/{krattiviteitId}",
-     *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="DELETE", responseClass="Krattiviteit")
-     *     )
+     *   path="/krattiviteiten/{id}",
+     *   @SWG\Operation(
+     *     method="DELETE",
+     *     nickname="deleteKrattiviteit",
+     *     summary="De krattiviteit met ID {id} verwijderen",
+     *     @SWG\Parameter(
+     *       name="id",
+     *       description="Het ID van de krattiviteit",
+     *       required=true,
+     *       type="integer",
+     *       paramType="path"
+     *     ),
+     *     @SWG\ResponseMessage(code="204", message="De krattiviteit is verwijderd"),
+     *     @SWG\ResponseMessage(code="404", message="Kon de krattiviteit met id {id} niet verwijderen. Er is geen krattiviteit met dat ID in de database.")
+     *   )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Krattiviteit not found")
-     */
+     **/
     public function deleteAction(Request $request, Application $app, $id)
     {
         if($this->delete($app, $id)) {
@@ -71,12 +94,28 @@ class KrattiviteitenController extends RestController implements RestControllerI
 
     /**
      * @SWG\Api(
-     *     path="/krattiviteiten",
-     *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="POST", responseClass="Krattiviteit")
-     *     )
+     *   path="/krattiviteiten/{id}",
+     *   @SWG\Operation(
+     *     method="POST",
+     *     nickname="krattiviteit",
+     *     summary="Krattiviteit updaten",
+     *     type="Krattiviteit",
+     *     @SWG\Parameter(
+     *       name="body",
+     *       description="Krattiviteit object",
+     *       required=true,
+     *       type="Krattiviteit",
+     *       paramType="body",
+     *       defaultValue="{
+  ""name"": ""Krattiviteit"",
+  ""date"": ""2024-12-24""
+}"
+     *     ),
+     *     @SWG\ResponseMessage(code="200", message="De krattiviteit is aangemaakt"),
+     *     @SWG\ResponseMessage(code="404", message="Kon de krattiviteit niet aanmaken")
+     *   )
      * )
-     */
+     **/
     public function postAction(Request $request, Application $app)
     {
         return new JsonResponse(
@@ -86,13 +125,28 @@ class KrattiviteitenController extends RestController implements RestControllerI
 
     /**
      * @SWG\Api(
-     *     path="/krattiviteiten/{krattiviteitId}.{format}",
-     *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="PUT", responseClass="Krattiviteit")
-     *     )
+     *   path="/krattiviteiten/{id}",
+     *   @SWG\Operation(
+     *     method="PUT",
+     *     nickname="krattiviteit",
+     *     summary="Krattiviteit updaten",
+     *     type="Krattiviteit",
+     *     @SWG\Parameter(
+     *       name="body",
+     *       description="Krattiviteit object",
+     *       required=true,
+     *       type="Krattiviteit",
+     *       paramType="body",
+     *       defaultValue="{
+  ""name"": ""Krattiviteit"",
+  ""date"": ""2024-12-24""
+}"
+     *     ),
+     *     @SWG\ResponseMessage(code="200", message="De krattiviteit is bijgewerkt"),
+     *     @SWG\ResponseMessage(code="404", message="Kon de krattiviteit niet bijwerken. Er is geen krattiviteit met ID {id}")
+     *   )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Krattiviteit not found")
-     */
+     **/
     public function putAction(Request $request, Application $app, $id)
     {
         return new JsonResponse(

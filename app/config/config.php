@@ -25,7 +25,7 @@ return array(
     ),
 
     'orm.proxies_dir'   => '%app.path%/app/cache/Doctrine/Proxies',
-    'orm.default_cache' => 'xcache', #should be set to apc/xcache on production
+    //'orm.default_cache' => 'xcache', #should be set to apc/xcache on production
     'orm.em.options'    => array(
         'mappings' => array(
             array(

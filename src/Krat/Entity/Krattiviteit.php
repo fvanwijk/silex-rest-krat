@@ -9,27 +9,33 @@ use JMS\Serializer\Annotation\Type;
 use Swagger\Annotations as SWG;
 
 /**
+ * Krattiviteit
+ *
  * @ORM\Entity
  * @ORM\Table(name="krattiviteiten")
- * @SWG\Model(id="Krattiviteit")
+ * @SWG\Model()
  */
 class Krattiviteit
 {
     /**
+     * @var int
      * @Type("integer")
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
      * @Groups({"list", "detail"})
-     * @SWG\Property(name="id", type="integer")
+     * @SWG\Property(required=true)
      */
     protected $id;
 
     /**
+     * The name that describes the krattiviteit
+     *
+     * @var string
      * @Type("string")
      * @ORM\Column(type="string")
      * @Groups({"list", "detail"})
-     * @SWG\Property(name="name", type="string")
+     * @SWG\Property()
      */
     protected $name;
 

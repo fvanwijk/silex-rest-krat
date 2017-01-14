@@ -17,7 +17,9 @@
         "marcojanssen/silex-routing-service-provider": "1.2.*",
         "marcojanssen/silex-service-register-provider": "1.1.*",
         "silex/silex": "~1.2",
-        "symfony/monolog-bridge": "~2.3"
+        "symfony/monolog-bridge": "~2.3",
+        "jdesrosiers/silex-swagger-provider": "v1.2.0",
+        "kbrabrand/silex-swagger-ui": "1.0.0"
     },
     "scripts": {
         "post-install-cmd": [

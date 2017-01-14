@@ -43,6 +43,18 @@ if(true !== $cli) {
     );
 }
 
+// Set up swagger ui service for viewing the swagger docs
+$app->register(new SwaggerUI\Silex\Provider\SwaggerUIServiceProvider(), array(
+    "swaggerui.path"       => "/swagger-ui", // "swagger" werkt niet?
+    "swaggerui.apiDocPath" => "/api/api-docs"
+));
+
+$app->register(new JDesrosiers\Silex\Provider\SwaggerServiceProvider(), array(
+    "swagger.srcDir" => __DIR__ . "/../vendor/zircote/swagger-php/library",
+    "swagger.servicePath" => __DIR__ . "/../src/Krat",
+    "swagger.apiDocPath" => "/api/api-docs"
+));
+
 $app['validator.mapping.class_metadata_factory'] = new Symfony\Component\Validator\Mapping\Factory\LazyLoadingMetadataFactory(
     new Symfony\Component\Validator\Mapping\Loader\YamlFileLoader(__DIR__.'/../app/config/validation.yml')
 );

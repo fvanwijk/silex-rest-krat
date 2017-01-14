@@ -15,22 +15,32 @@ use Swagger\Annotations as SWG;
  *
  * @SWG\Resource(
  *     apiVersion="1.0",
- *     swaggerVersion="1.2",
+ *     basePath="/",
  *     resourcePath="/leden",
- *     basePath="http://krat.localhost/api"
+ *     description="Leden opvragen en beheren"
  * )
  */
 class LedenController extends RestController implements RestControllerInterface
 {
+
     /**
      * @SWG\Api(
-     *     path="/leden/{lidId}.{format}",
-     *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="GET", responseClass="Lid")
+     *   path="/leden/{id}",
+     *   @SWG\Operation(
+     *     method="GET",
+     *     nickname="lid",
+     *     summary="Get a member with {id}",
+     *     type="Lid",
+     *     @SWG\Parameter(
+     *       name="id",
+     *       description="The id of the member",
+     *       required=true,
+     *       type="integer",
+     *       paramType="path"
      *     )
+     *   )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Lid not found")
-     */
+     **/
     public function getAction(Request $request, Application $app, $id)
     {
         return new JsonResponse(
@@ -40,12 +50,14 @@ class LedenController extends RestController implements RestControllerInterface
 
     /**
      * @SWG\Api(
-     *     path="/leden.{format}",
-     *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="GET", responseClass="Lid")
-     *     )
+     *   path="/leden",
+     *   @SWG\Operation(
+     *     method="GET",
+     *     nickname="lid",
+     *     summary="Get all members",
+     *   )
      * )
-     */
+     **/
     public function getCollectionAction(Request $request, Application $app)
     {
         return new JsonResponse(
@@ -55,13 +67,14 @@ class LedenController extends RestController implements RestControllerInterface
 
     /**
      * @SWG\Api(
-     *     path="/leden/{lidId}",
-     *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="DELETE", responseClass="Lid")
-     *     )
+     *   path="/leden/{id}",
+     *   @SWG\Operation(
+     *     method="DELETE",
+     *     nickname="deleteLid",
+     *     summary="Het lid met ID {id} verwijderen",
+     *   )
      * )
-     * @SWG\ErrorResponse(code="404", reason="Lid not found")
-     */
+     **/
     public function deleteAction(Request $request, Application $app, $id)
     {
         if($this->delete($app, $id)) {
@@ -69,14 +82,6 @@ class LedenController extends RestController implements RestControllerInterface
         }
     }
 
-    /**
-     * @SWG\Api(
-     *     path="/leden",
-     *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="POST", responseClass="Lid")
-     *     )
-     * )
-     */
     public function postAction(Request $request, Application $app)
     {
         return new JsonResponse(
@@ -84,15 +89,6 @@ class LedenController extends RestController implements RestControllerInterface
         );
     }
 
-    /**
-     * @SWG\Api(
-     *     path="/leden/{lidId}.{format}",
-     *     @SWG\Operations(
-     *         @SWG\Operation(httpMethod="PUT", responseClass="Lid")
-     *     )
-     * )
-     * @SWG\ErrorResponse(code="404", reason="Lid not found")
-     */
     public function putAction(Request $request, Application $app, $id)
     {
         return new JsonResponse(
